@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Clueso Clone Recorder",
+  "version": "1.0",
+  "description": "Records clicks to create step-by-step guides.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Clueso Recorder"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
