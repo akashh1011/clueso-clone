@@ -1,4 +1,4 @@
-import Guide from "../models/Guide.js"; // .js lagana mat bhulna
+import Guide from "../models/Guide.js";
 
 export const createGuide = async (req, res) => {
   try {
@@ -7,8 +7,7 @@ export const createGuide = async (req, res) => {
     const processedSteps = steps.map((step, index) => ({
       ...step,
       order: index + 1,
-      description:
-        step.description || `Click on "${step.elementText || step.elementTag}"`,
+      description: step.description || `Click on "${step.elementText}"`,
     }));
 
     const guide = new Guide({
